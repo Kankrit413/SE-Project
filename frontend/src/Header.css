@@ -1,0 +1,77 @@
+/* Header.css */
+
+.header-container {
+    background-color: #f8d7da;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-left .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo-image {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header-center {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+.search-button {
+    background-color: #fff;
+    border: none;
+    color: #f8d7da;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.search-button .fa-search {
+    font-size: 1.2rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-link {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1rem;
+}
+
+.cart-icon {
+    color: white;
+    margin-left: 20px;
+    font-size: 1.5rem;
+}
