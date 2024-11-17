@@ -1,5 +1,3 @@
-/* Header.css */
-
 .header-container {
     background-color: #f8d7da;
     padding: 10px 20px;
@@ -59,19 +57,34 @@
 }
 
 .header-right {
+    margin-left: auto; /* Push the section to the far right */
     display: flex;
     align-items: center;
+    justify-content: flex-end;
+    gap: 15px; /* Add spacing between elements */
 }
 
 .header-link {
-    color: white;
+    color: #f1f1f1; /* A lighter shade for more visibility */
     text-decoration: none;
     margin-left: 15px;
     font-size: 1rem;
+    font-weight: bold; /* Highlight text by making it bold */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.header-link:hover {
+    color: #ffccd1; /* Highlight the text with a lighter pink on hover */
 }
 
 .cart-icon {
-    color: white;
+    color: #fff;
     margin-left: 20px;
     font-size: 1.5rem;
+    transition: transform 0.3s ease; /* Add hover animation */
+}
+
+.cart-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: #ffccd1; /* Lighter pink on hover */
 }

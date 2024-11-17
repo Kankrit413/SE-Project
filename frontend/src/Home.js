@@ -1,69 +1,88 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Header';
-import ProductList from './ProductList';
+import { Link } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
+import Header from './Header';
 
 const Home = () => {
-    const [products, setProducts] = useState([]); // สินค้าที่จะแสดง
-    const [initialProducts, setInitialProducts] = useState([]); // สินค้าทั้งหมด (เริ่มต้น)
-    const [loading, setLoading] = useState(false); // สถานะโหลดข้อมูล
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        fetchProducts("all"); // ดึงสินค้าทั้งหมดเมื่อโหลดหน้าแรก
+        fetchProducts("all"); // Fetch all products on initial load
     }, []);
 
-    // ฟังก์ชันดึงสินค้าตามประเภท
-    const fetchProducts = async (type) => {
-        setLoading(true); // แสดงสถานะกำลังโหลด
-        try {
-            const url = type === "all"
-                ? 'http://localhost:5000/api/products'
-                : `http://localhost:5000/api/products/type/${type}`;
-
-            const response = await axios.get(url);
-            setProducts(response.data);
-            if (type === "all") setInitialProducts(response.data); // บันทึกข้อมูลเริ่มต้น
-        } catch (error) {
-            console.error("Error fetching products:", error);
-        } finally {
-            setLoading(false); // ปิดสถานะโหลด
-        }
-    };
-
-    // ฟังก์ชันค้นหาสินค้าตามชื่อหรือแบรนด์
-    const handleSearchResults = async (searchTerm) => {
-        if (searchTerm === '') {
-            setProducts(initialProducts); // คืนค่าข้อมูลเริ่มต้นถ้าไม่มีคำค้นหา
-            return;
-        }
-
+    const fetchProducts = async (type, searchQuery = "") => {
         setLoading(true);
         try {
-            const response = await axios.get(`http://localhost:5000/api/products/search?query=${encodeURIComponent(searchTerm)}`);
-            setProducts(response.data); // อัปเดตสินค้าตามคำค้นหา
+            const url = type === "all"
+                ? `http://localhost:5000/api/products?q=${searchQuery}`
+                : `http://localhost:5000/api/products/type/${type}?q=${searchQuery}`;
+            const response = await axios.get(url);
+            setProducts(response.data);
         } catch (error) {
-            console.error("Error searching products:", error);
-            setProducts([]); // ถ้าไม่พบสินค้า ให้แสดงเป็นข้อมูลว่าง
+            console.error("Error fetching products:", error);
         } finally {
             setLoading(false);
         }
     };
 
+    const handleSearch = (searchTerm) => {
+        fetchProducts("all", searchTerm); // Fetch all products matching the search term
+    };
+
     return (
         <div className="app-container">
-            <Header onSearch={handleSearchResults} />
-            <div className="filter-buttons">
-                <button onClick={() => fetchProducts("all")}>All</button>
-                <button onClick={() => fetchProducts("sunscreen")}>Sunscreen</button>
-                <button onClick={() => fetchProducts("cleanser")}>Cleanser</button>
-                <button onClick={() => fetchProducts("moisturizer")}>Moisturizer</button>
+            {/* Include Header and pass handleSearch */}
+            <Header onSearch={handleSearch} />
+            
+            {/* Filter Buttons */}
+            <div className="filter-container">
+                <button className="filter-button" onClick={() => fetchProducts("sunscreen")}>Sunscreen</button>
+                <button className="filter-button" onClick={() => fetchProducts("cleanser")}>Cleanser</button>
+                <button className="filter-button" onClick={() => fetchProducts("moisturizer")}>Moisturizer</button>
             </div>
-            {loading ? (
-                <div className="loading">กำลังโหลดข้อมูล...</div>
-            ) : (
-                <ProductList products={products} />
-            )}
+
+            {/* Search and Dropdown Filters */}
+            <div className="search-and-filters">
+                <select className="filter-dropdown" onChange={(e) => fetchProducts(e.target.value)}>
+                    <option value="all">Select Type</option>
+                    <option value="sunscreen">Sunscreen</option>
+                    <option value="cleanser">Cleanser</option>
+                    <option value="moisturizer">Moisturizer</option>
+                </select>
+                <select className="filter-dropdown">
+                    <option value="">Select Brand</option>
+                    <option value="brand1">Brand 1</option>
+                    <option value="brand2">Brand 2</option>
+                    <option value="brand3">Brand 3</option>
+                </select>
+            </div>
+
+            {/* Product Recommendation and List */}
+            <div className="content-container">
+                <div className="recommendation">
+                    <h2>Product Recommend</h2>
+                </div>
+                <div className="product-slider">
+                    {loading ? (
+                        <div>Loading...</div>
+                    ) : (
+                        products.map(product => (
+                            <div className="product-item" key={product.id}>
+                                <img src={product.image} alt={product.name} />
+                                <p>{product.name}</p>
+                                <p>{product.price}</p>
+                            </div>
+                        ))
+                    )}
+                </div>
+            </div>
+
+            {/* Footer */}
+            <footer className="footer">
+                <Link to="/add-product" className="advertise-link">Contact to Advertise</Link>
+            </footer>
         </div>
     );
 };

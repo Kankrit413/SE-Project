@@ -29,35 +29,15 @@ const Header = ({ onSearch }) => {
     return (
         <header className="header-container">
             <div className="header-top">
-                <div className="header-left">
-                    <a href="/" className="logo">
-                        <img src="/path-to-your-logo.png" alt="Logo" className="logo-image" />
-                        <span>MyShop</span>
-                    </a>
-                </div>
-                <div className="header-center">
-                    <input 
-                        type="text" 
-                        placeholder="ค้นหาสินค้า หรือแบรนด์..." 
-                        className="search-bar" 
-                        value={searchTerm} 
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                    />
-                    <button className="search-button" onClick={handleSearch}>
-                        ค้นหา  
-                    </button>
-                </div>
                 <div className="header-right">
                     {username ? (
                         <>
-                            <span className="header-link">Hello, {username}</span>
-                            <button
-                                className="header-link logout-button"
-                                onClick={handleLogout}
-                                style={{ backgroundColor: 'red', color: 'white' }} 
-                            >
-                                Logout
-                            </button>
+                            <Link to="/profile" className="header-link">
+                                Hello, {username}
+                            </Link>
+                            <a href="/cart" className="cart-icon">
+                                <i className="fa fa-shopping-cart"></i>
+                            </a>
                         </>
                     ) : (
                         <>
@@ -66,12 +46,8 @@ const Header = ({ onSearch }) => {
                             <Link to="/register" className="header-link">Sign Up</Link>
                         </>
                     )}
-                    <a href="/cart" className="cart-icon">
-                        <i className="fa fa-shopping-cart"></i>
-                    </a>
                 </div>
             </div>
-            
         </header>
     );
 };

@@ -1,58 +1,79 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate, Link } from 'react-router-dom'; // นำเข้า Link จาก react-router-dom
+import { useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
-    const [username, setUsername] = useState(''); // สถานะเก็บ username
-    const [password, setPassword] = useState(''); // สถานะเก็บ password
-    const navigate = useNavigate(); // ใช้สำหรับการนำทาง
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
-        e.preventDefault(); // ป้องกันการรีเฟรชหน้า
+        e.preventDefault();
+
         try {
-            // ตรวจสอบกรณีที่ username และ password เป็น admin โดยไม่ต้องเรียก API
+            // Special case for admin login without API request
             if (username === 'admin' && password === 'kmutt123') {
                 localStorage.setItem('username', username);
-                navigate('/admin'); // นำทางไปหน้า AddProduct.js
+                navigate('/admin'); // Redirect to Admin dashboard
                 return;
             }
 
-            // ส่งคำขอไปยัง API สำหรับกรณีทั่วไป
+            // General user login via API
             const response = await axios.post('http://localhost:5000/api/login', { username, password });
             if (response.status === 200) {
-                // บันทึก username ลงใน LocalStorage
                 localStorage.setItem('username', username);
-
-                // นำทางไปยังหน้า Home สำหรับผู้ใช้ทั่วไป
-                navigate('/Home');
+                navigate('/Home'); // Redirect to the home page
             }
         } catch (error) {
-            alert('Invalid username or password'); // ถ้าเข้าสู่ระบบไม่สำเร็จ แสดงข้อความเตือน
+            alert('Invalid username or password. Please try again.'); // Inform the user of a failed login attempt
         }
     };
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    value={username}
-                    onChange={e => setUsername(e.target.value)} // เก็บค่า username
-                    required
-                />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    value={password}
-                    onChange={e => setPassword(e.target.value)} // เก็บค่า password
-                    required
-                />
-                <button type="submit">Login</button>
+        <div style={{ margin: '2rem', textAlign: 'center' }}>
+            <h2>Welcome to the Login Page</h2>
+            <form onSubmit={handleLogin} style={{ display: 'inline-block', textAlign: 'left' }}>
+                <div style={{ marginBottom: '1rem' }}>
+                    <label htmlFor="username" style={{ display: 'block', marginBottom: '0.5rem' }}>Username</label>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username"
+                        value={username}
+                        onChange={e => setUsername(e.target.value)}
+                        required
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
+                    />
+                </div>
+                <div style={{ marginBottom: '1rem' }}>
+                    <label htmlFor="password" style={{ display: 'block', marginBottom: '0.5rem' }}>Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                        required
+                        style={{ padding: '0.5rem', width: '100%', boxSizing: 'border-box' }}
+                    />
+                </div>
+                <button
+                    type="submit"
+                    style={{
+                        padding: '0.5rem 1rem',
+                        backgroundColor: '#007BFF',
+                        color: '#FFF',
+                        border: 'none',
+                        borderRadius: '0.25rem',
+                        cursor: 'pointer',
+                    }}
+                >
+                    Login
+                </button>
             </form>
-            {/* ปุ่มหรือข้อความสำหรับการลงทะเบียน */}
-            <p>Don't have an account? <Link to="/register">Register here</Link></p>
+            <p style={{ marginTop: '1rem' }}>
+                Don’t have an account? <Link to="/register" style={{ color: '#007BFF' }}>Register here</Link>.
+            </p>
         </div>
     );
 };

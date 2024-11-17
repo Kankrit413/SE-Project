@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // ใช้สำหรับการนำทาง
 import axios from 'axios';
-import './App.css';
+import './AdminPage.css';
 
 const AdminPage = () => {
     const navigate = useNavigate();
