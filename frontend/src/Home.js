@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
 import Header from './Header';
-import Recommended from './Recommended-Products/Recommended';
+import Recommended from './Page2/mainheader';
 import { useNavigate } from "react-router-dom";
 
 

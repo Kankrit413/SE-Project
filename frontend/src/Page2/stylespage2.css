@@ -1,0 +1,157 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fefefe;
+  }
+/* ขนาดหน้าจอ */
+  /* .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }  */
+  
+
+/* พทหลังHeader */
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px;
+        background-color: #FFE5E6;
+    }
+
+/* หัวข้อ Products Recommendation */
+    h1 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5em;
+    } 
+
+/* Main Content */
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+/* แบ่งพื้นที่ Products และ Recommended Products */
+    .product-container {
+        display: flex;
+        gap: 0px;
+    }
+    
+/* Product เฉยๆ ------------------------*/ 
+.recommendation-card,
+  .product-card {
+    text-align: center; /* จัดตำแหน่งให้อยู่ตรงกลาง */
+    padding: 10px; /* ระยะห่างของการ์ดจากขอบ */
+    background-color: #ffffff;
+    width: 900px;
+    height: 450px;
+    overflow: hidden;
+    margin: 1px 1px 1px 10px;
+    
+  }
+    /* รูปสินค้า */
+    .recommendation-card img{
+        width: 250px; /* กำหนดความกว้าง */
+        height:400px; /* กำหนดความสูง */
+        object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
+        float: right;
+    }
+
+    .product-card img {
+        width: 250px; /* กำหนดความกว้าง */
+        height: 400px; /* กำหนดความสูง */
+        object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
+        float: left;
+        
+    }
+
+/* การ์ด Productอันใน */
+    .product-card {
+        flex: 0 0 150px;
+        padding: 10 px;
+        text-align: center;
+        margin-top: 20px;
+        transition: transform 0.3s ease, 
+    }
+
+/* กรอบประเภท ของProduct */
+    .product-type {
+        display: inline-block; /* กรอบปรับตามขนาดข้อความ */
+        padding: 10px 15px; /* ระยะห่างภายในกรอบ */
+        border: 3px solid #FCBABC; /* เส้นขอบของข้อความ */
+        border-radius: 20px; /* มุมโค้งของกรอบ */
+        background-color: #ffffff; /* สีพื้นหลัง */
+        color: #FCBABC; /* สีของข้อความ */
+        font-size: 0.9em; /* ขนาดตัวอักษร */
+        text-align: center; /* จัดข้อความให้อยู่กลาง */
+    }
+
+
+/* youmightlike ------------------------------*/
+/* You Might Like Section */
+    .you-might-like {
+        padding: 15px;
+        background-color: #FFE6E6;
+        box-shadow: #ddd;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+        gap: 10px;
+        
+    }
+    /* ตัวออักษรหัวข้อ */
+    .you-might-like h2 {
+        color: #0d0e0d;
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        text-align: center;
+        
+    }
+/* ขนาดพื้นสีขาวของโฆษณา */
+    .product-slider {
+        display: flex;
+        overflow-x: auto;
+        /* ระยะห่างของการ์ดโฆษณา */
+        gap: 20px;
+        padding: 10px 0;
+    }
+
+
+/* ใช้ด้วยกัน */
+/*  แบ่งพื้นที่ 2 ฝั่งสินค้าล่างสุด */
+    .product-section,
+    .recommendation-section {
+        flex: 1;
+        padding: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+        background-color: rgb(255, 255, 255);
+        text-align: center; /* จัดข้อความให้อยู่กลาง */
+    }
+
+/* หัวข้อ */
+    .product-section h2,
+    .recommendation-section h2 {
+        color: #ff6f61;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+/* ชื่อสินค้า */
+    .recommendation-card h3,
+    .product-card h3 {
+        font-size: 1em;
+        color: #333;
+        margin: 5px 0;
+    }
+
+/* ขนาดและสีของราคา */
+    .recommendation-card .price,
+    .product-card .price {
+        color: #ff6f61;
+        font-weight: bold;
+        font-size: 0.9em;
+    }

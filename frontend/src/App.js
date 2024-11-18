@@ -9,7 +9,7 @@ import AdminPage from './addminpage';
 import DeleteProduct from './deleteproduct';
 import UserProfile from './profile'; // Import UserProfile component
 import ProfilePage from './ProfilePage'; // Import the ProfilePage component
-import Recommended from './Recommended-Products/Recommended';
+import Recommended from './Page2/mainheader';
 
 const App = () => {
   return (

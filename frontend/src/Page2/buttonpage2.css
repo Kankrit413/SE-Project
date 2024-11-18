@@ -1,0 +1,78 @@
+/* ปุ่มกลับ */
+    .back-button {
+        display: inline;
+        border: none;
+        width: 50px;
+        background-color: #ff9a9e;
+        color: white;
+        font-size: 2em;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .back-button:hover {
+        background-color: #ff6f61;
+    }
+
+/* ปุ่มเลือกประเภทสินค้า */
+    .category-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+/* ปุ่มเลือกประเภทสินค้า */
+    .category-buttons button {
+        padding: 10px 15px;
+        border: 3px solid #FCBABC;  /*ขอบปุ่ม*/
+        border-radius: 20px; /*มุมโค้งของปุ่ม*/
+        background-color: #ffffff; 
+        color: #FCBABC; /*สีตัวอักษร*/
+        cursor: pointer; 
+        font-size: 0.9em;
+        transition: all 0.3s ease;
+    }
+
+/* ปุ่มสประเภทเมื่อนำเมาสืไปจิ้มเเล้วจะเปลี่ยนสี */
+  .category-buttons button:hover {
+    background-color: #FCBABC;
+    color: white;
+  }
+  
+  .category-buttons button.active {
+    background-color: #FCBABC;
+    color: white;
+  }
+
+/* ปุ่ม navigation (next, back) */
+    .navigation-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top:20px;
+    }
+/* ปุ่ม BUY Next Back เมื่อไม่มีการกดหรืออะไรจะเป็นสีชมพู */
+    .navigation-buttons button {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: #FFE6E6;
+        color: black;
+        font-size: 0.9em;
+        transition: background-color 0.3s ease;
+    }
+
+/* ปุ่มไม่สามารถกดได้ ของ Back Next*/
+    .navigation-buttons button:disabled {
+        background-color: #ddd;
+        cursor: not-allowed;
+    }
+
+/* สีของปุ่ม BUY Next Back */
+    .navigation-buttons button:hover:not(:disabled) {
+        background-color: #FCBABC;
+    }
+
