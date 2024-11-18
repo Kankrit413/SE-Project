@@ -9,6 +9,7 @@ import AdminPage from './addminpage';
 import DeleteProduct from './deleteproduct';
 import UserProfile from './profile'; // Import UserProfile component
 import ProfilePage from './ProfilePage'; // Import the ProfilePage component
+import Recommended from './Recommended-Products/Recommended';
 
 const App = () => {
   return (
@@ -24,6 +25,8 @@ const App = () => {
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/profile" element={<UserProfile />} /> {/* Add route for UserProfile */}
         <Route path="/profile-page" element={<ProfilePage />} /> {/* Add route for ProfilePage */}
+        <Route path="/recommended" element={<Recommended />} />
+
       </Routes>
     </Router>
   );

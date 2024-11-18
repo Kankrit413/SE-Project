@@ -129,7 +129,7 @@ body {
   color: white;
 }
 
-/* Content Section */
+/* Content Section (พื้นหลังproductทังหมด)*/
 .content-container {
   flex: 1; /* Expand to fit the remaining space */
   display: flex;
@@ -153,6 +153,7 @@ body {
   text-align: center;
 }
 
+/* Product Section (พื้นหลังของสไลด์product) */
 .product-slider {
   flex: 2 1 65%;
   display: flex;
@@ -164,10 +165,16 @@ body {
   scroll-behavior: smooth;
 }
 
+/* กรอบสินค้า */
 .product-item {
   flex-shrink: 0;
   width: 150px;
   text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  transition: transform 0.2s, box-shadow 0.2s; /* เพิ่มการเปลี่ยนแปลงแบบ smooth */
+  cursor: pointer; /* เปลี่ยนเป็น pointer เมื่อเลื่อนเมาส์ */
 }
 
 .product-item img {
