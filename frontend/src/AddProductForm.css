@@ -14,7 +14,7 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 600px;
-    height: 630px;
+    height: 100%;
     margin: auto;
     position: relative;
     margin-top: auto;
@@ -140,6 +140,25 @@ body {
     flex: 1; /* ให้ช่อง input ขยายตัวตามพื้นที่ */
 }
 
+.ingredients-field {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+}
+
+.ingredients-btn {
+    background: #ff8080;
+    color: #fff;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
