@@ -21,19 +21,37 @@ body {
 /* Header Section */
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: #ffe6eb;
-  padding: 20px;
+  /* padding: px; */
 }
 
-/* Auth Buttons */
-.auth-buttons {
+
+.header-buttons {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+  /* margin-top: 10px; */
 }
 
-.auth-button.register {
+.buttonLog {
+  background-color: #fff2f7;
+  border: 2px solid #ff8aa5;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #ff8aa5;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.buttonLog hover {
+  background-color: #ff8aa5;
+  color: white;
+}
+
+.buttonRe {
   background-color: #ff8aa5;
   border: none;
   padding: 12px 20px;
@@ -44,25 +62,38 @@ body {
   transition: background-color 0.3s;
 }
 
-.auth-button.register:hover {
+.buttonRe hover {
   background-color: #ff647c;
 }
 
-.auth-button.login {
-  background-color: #ffe6eb;
-  border: 2px solid #ff8aa5;
-  padding: 10px 18px;
-  border-radius: 5px;
-  font-weight: bold;
-  color: #ff8aa5;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+/* Search Container */
+.search-container {
+  position: relative; /* กำหนดตำแหน่งเพื่อให้ .search-icon อ้างอิง */
+  width: 80%;
+  max-width: 800px;
+  margin: 10px auto;
 }
 
-.auth-button.login:hover {
-  background-color: #ff8aa5;
-  color: white;
+/* Search Input */
+.search-input {
+  width: 100%; /* ขยายให้เต็มความกว้างของ parent */
+  padding: 12px 40px 12px 12px; /* เผื่อพื้นที่สำหรับไอคอนทางขวา */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
 }
+
+/* Search Icon */
+.search-icon {
+  position: absolute;
+  right: 10px; /* วางชิดขอบขวาของ input */
+  top: 50%; /* จัดตำแหน่งตรงกลางแนวตั้ง */
+  transform: translateY(-50%); /* ปรับให้ไอคอนอยู่ตรงกลาง */
+  font-size: 18px; /* ขนาดไอคอน */
+  color: #888; /* สีของไอคอน */
+  cursor: pointer; /* เปลี่ยนเมาส์เป็นมือเมื่อ hover */
+}
+
 
 /* Filter Buttons Section */
 .filter-container {
@@ -70,7 +101,7 @@ body {
   justify-content: center;
   gap: 20px;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-bottom: 2px solid #ff8aa5;
 }
 
@@ -78,7 +109,7 @@ body {
 .filter-button {
   background-color: #ff8aa5;
   border: none;
-  padding: 16px 32px;
+  padding: 14px 28px;
   border-radius: 30px;
   font-size: 18px;
   font-weight: bold;
@@ -96,6 +127,7 @@ body {
 /* Search and Dropdown Filters Section */
 .search-and-filters {
   display: flex;
+  height: 20px;
   justify-content: center;
   gap: 30px;
   align-items: center;
@@ -183,12 +215,51 @@ body {
   margin-bottom: 10px;
 }
 
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  border: none;
+  background-color: #ff8aa5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #444;
+}
+
 /* Footer Section */
 .footer {
   text-align: center;
-  padding: 40px;
+  padding: 20px;
   background-color: #ffe6eb;
-  color: rgb(0, 0, 0);
+  color: #444;
   font-weight: bold;
   border-top: 2px solid #ffe6eb;
+}
+
+.advertise-link {
+  text-decoration: none;
+  color: #ff8aa5;
+  transition: color 0.3s ease;
+}
+
+.advertise-link:hover {
+  color: #ff647c;
 }

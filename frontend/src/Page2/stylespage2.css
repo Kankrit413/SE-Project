@@ -19,6 +19,7 @@ body {
         gap: 10px;
         padding: 15px;
         background-color: #FFE5E6;
+        justify-content: space-between;
     }
 
 /* หัวข้อ Products Recommendation */
@@ -38,32 +39,32 @@ body {
 /* แบ่งพื้นที่ Products และ Recommended Products */
     .product-container {
         display: flex;
-        gap: 0px;
+        gap: 15px;
     }
     
 /* Product เฉยๆ ------------------------*/ 
-.recommendation-card,
+  .recommendation-card,
   .product-card {
     text-align: center; /* จัดตำแหน่งให้อยู่ตรงกลาง */
     padding: 10px; /* ระยะห่างของการ์ดจากขอบ */
     background-color: #ffffff;
-    width: 900px;
-    height: 450px;
+    width: 720px;
+    height: 350px;
     overflow: hidden;
     margin: 1px 1px 1px 10px;
     
   }
     /* รูปสินค้า */
     .recommendation-card img{
-        width: 250px; /* กำหนดความกว้าง */
-        height:400px; /* กำหนดความสูง */
+        width: 200px; /* กำหนดความกว้าง */
+        height:250px; /* กำหนดความสูง */
         object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
         float: right;
     }
 
     .product-card img {
-        width: 250px; /* กำหนดความกว้าง */
-        height: 400px; /* กำหนดความสูง */
+        width: 200px; /* กำหนดความกว้าง */
+        height: 275px; /* กำหนดความสูง */
         object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
         float: left;
         
@@ -71,7 +72,7 @@ body {
 
 /* การ์ด Productอันใน */
     .product-card {
-        flex: 0 0 150px;
+        flex: 0 0 100px;
         padding: 10 px;
         text-align: center;
         margin-top: 20px;
@@ -81,7 +82,7 @@ body {
 /* กรอบประเภท ของProduct */
     .product-type {
         display: inline-block; /* กรอบปรับตามขนาดข้อความ */
-        padding: 10px 15px; /* ระยะห่างภายในกรอบ */
+        padding: 10px 10px; /* ระยะห่างภายในกรอบ */
         border: 3px solid #FCBABC; /* เส้นขอบของข้อความ */
         border-radius: 20px; /* มุมโค้งของกรอบ */
         background-color: #ffffff; /* สีพื้นหลัง */
@@ -125,7 +126,7 @@ body {
     .product-section,
     .recommendation-section {
         flex: 1;
-        padding: 15px;
+        padding: 5px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
         background-color: rgb(255, 255, 255);
         text-align: center; /* จัดข้อความให้อยู่กลาง */
@@ -155,3 +156,5 @@ body {
         font-weight: bold;
         font-size: 0.9em;
     }
+
+    
