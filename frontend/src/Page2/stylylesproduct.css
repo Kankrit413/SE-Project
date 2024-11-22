@@ -1,0 +1,130 @@
+/* Recommendation Card เฉยๆ */
+/* รูปสินค้า */
+.recommendation-card img{
+    width: 250px; /* กำหนดความกว้าง */
+    height:390px; /* กำหนดความสูง */
+    object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
+    float: right;
+    border: #ffffff 2px solid
+}
+
+.Recommended-text-box{
+    font-family: 'Afacad', sans-serif;
+    width: 600px;
+    height: 250px;
+    text-align: center;
+    padding: 0px 15px 15px; /* เพิ่มระยะห่างด้านในกรอบ */
+    margin-left : px; /* เพิ่มระยะห่างรอบนอก */
+    background-color: #ffffff; /* สีพื้นหลัง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
+    border: #ffffff 2px solid
+}
+
+.combined {
+    border: #ffffff 2px solid;
+    height: 50px;  
+    width: 600px; 
+    padding: 0px 15px;
+    background-color: #FFE6E6;
+    border-radius: 10px;
+}
+
+
+/* Product เฉยๆ ------------------------*/ 
+
+.product-card img {
+    width: 250px; 
+    height: 390px; 
+    object-fit: cover; /* ตัดภาพให้พอดีกับขนาดที่กำหนด */
+    float: left;  
+    border: #ffffff 2px solid;
+}
+
+/* การ์ด Productอันใน */
+.product-card {
+    flex: 0 0 150px;
+    padding: 10 px;
+    text-align: center;
+    margin-top: 20px;
+    transition: transform 0.3s ease, 
+    
+}
+
+/* กรอบประเภท ของ Product */
+.product-type {
+    font-family: 'Afacad', sans-serif;
+    font-weight: bold;
+    display: inline-block; /* กรอบปรับตามขนาดข้อความ */
+    padding: 2px 15px; 
+    border: 3px solid #FCBABC; 
+    border-radius: 30px; 
+    background-color: #ffffff; 
+    color: #FCBABC; 
+    font-size: 1.3em; 
+    text-align: center; 
+}
+.products-text-box{
+    font-family: 'Afacad', sans-serif;
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    padding: 0px 15px 15px; /* เพิ่มระยะห่างด้านในกรอบ */
+    margin-left : 320px; /* เพิ่มระยะห่างรอบนอก */
+    background-color: #ffffff; /* สีพื้นหลัง */
+    font-size: 16px; /* ขนาดตัวอักษร */
+    line-height: 1.5; /* เพิ่มระยะห่างระหว่างบรรทัด */
+}
+
+
+
+/* ใช้ด้วยกัน */
+/*  แบ่งพื้นที่ 2 ฝั่งสินค้าล่างสุด */
+.Ingredients{
+    text-align: left
+}
+
+.product-section,
+.recommendation-section {
+    flex: 1;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    height: 530px;
+    }
+
+/* การ์ดสินค้าและแนะนํา */
+.recommendation-card,
+.product-card {
+    background-color: #ffffff;
+    width: 900px;
+    height: 400px;
+    /* overflow: hidden;  เนื้อหาที่เกินขอบเขตของ */
+    margin: 10px;
+}
+/* หัวข้อ */
+.product-section h2,
+.recommendation-section h2 {
+    color: #ff6f61;
+    font-size: 2em;
+    text-align: center;
+}
+
+/* ชื่อสินค้า */
+.recommendation-card h3,
+.product-card h3 {
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* ขนาดและสีของราคา */
+.recommendation-card .price,
+.product-card .price {
+    color: #ff6f61;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+
+

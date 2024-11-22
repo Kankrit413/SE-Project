@@ -1,0 +1,95 @@
+/* youmightlike ------------------------------*/
+/* You Might Like Section */
+.you-might-like {
+    padding: 25px 25px 0px;
+    margin-bottom: 0px;
+    background-color: #FFE6E6;
+    box-shadow: #ddd;
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); */
+    gap: 10px;
+    
+}
+
+/* ตัวออักษรหัวข้อ */
+.you-might-like h2 {
+    color: #0d0e0d;
+    font-size: 1.5em;
+    margin-bottom: 0px;
+    text-align: left; 
+}
+
+/* ขนาดพื้นสีขาวของโฆษณา */
+.product-slider {
+    display: flex;
+    overflow-x: auto; /* เปิดการเลื่อนในแนว X */
+    gap: 16px; /* ระยะห่างระหว่างการ์ด */
+    padding: 10px; /* ระยะห่างด้านใน */
+    scroll-behavior: smooth; /* เลื่อนแบบนุ่มนวล */
+    white-space: nowrap; /* ป้องกันการ์ดบรรทัดใหม่ */
+    background-color: #FFE6E6;
+}
+
+/* การซ่อน Scrollbar */
+.product-slider ::-webkit-scrollbar {
+display: none; /* สำหรับเบราว์เซอร์ที่รองรับ Webkit */
+}
+
+    
+
+
+/* You Might Like card */
+.YouMightLike-card {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 300px;
+    margin: 0;
+}
+
+.YouMightLike-card img {
+    width: 110px;
+    height: 120px;
+    margin: 0 auto ; 
+}
+.YouMightLike-detail-price{
+    font-family: 'Afacad', sans-serif;
+    font-size: 1.2em;
+    height: 80px;
+    width: 200px;
+    margin-bottom: 0px;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: normal; 
+    box-sizing: border-box;
+    }
+
+.YouMightLike-card-details {
+    height: 70px;
+    width: 180px;
+    font-size: 0.95em;
+    color: #555;
+    text-align: center;
+    word-wrap: break-word; 
+    overflow-wrap: break-word; 
+    white-space: normal; 
+    padding-left: 5px;
+} 
+
+.YouMightLike-price{
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+
+
+.YouMightLike-buy,.YouMightLike-card{
+    cursor: pointer;
+    padding: 10px;
+    border: 2px solid #dfdbdb;
+    text-align: center;
+    background-color: #ffffff;        border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.616); 
+}

@@ -1,6 +1,10 @@
 /* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Afacad', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   background-color: #ffe6eb; /* Light pink background */
   margin: 0;
   padding: 0;
