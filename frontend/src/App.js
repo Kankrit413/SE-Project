@@ -12,7 +12,7 @@ import ProfilePage from './ProfilePage'; // Import the ProfilePage component
 import Recommended from './Page2/mainheader';
 import PaymentForm from './Page2/payment';
 import './App.css';  // อย่าลืม import file CSS เพื่อให้การตั้งค่าฟอนต์ทำงาน
-
+import mainheader from './Page2/mainheader';
 
 const App = () => {
   return (
