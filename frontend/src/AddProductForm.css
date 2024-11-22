@@ -14,14 +14,17 @@ body {
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 600px;
+    height: 100%;
     margin: auto;
     position: relative;
+    margin-top: auto;
+    top: 20px;
 }
 
 /* Close Button */
 .add-product-form-container .close-btn {
     position: absolute;
-    top: 16px;
+    top: 8px;
     right: 16px;
     background: #ffb3b3;
     color: #000;
@@ -29,12 +32,12 @@ body {
     border-radius: 50%;
     width: 36px;
     height: 36px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    text-align: center;
-    line-height: 36px;
-    transition: background-color 0.3s ease;
+    /* text-align: center; */
+    line-height: 8px;
+    /* transition: background-color 0.3s ease; */
 }
 
 .add-product-form-container .close-btn:hover {
@@ -43,6 +46,7 @@ body {
 
 /* Form Styling */
 .add-product-form-container .add-product-form {
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -81,57 +85,6 @@ body {
     cursor: pointer;
 }
 
-/* Ingredients Section */
-.add-product-form-container .ingredients-field {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.add-product-form-container .ingredients-field .ingredient-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-    background: #f8f9fa;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.add-product-form-container .ingredients-field .ingredient-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    margin-bottom: 6px;
-}
-
-.add-product-form-container .ingredients-field .add-btn,
-.add-product-form-container .ingredients-field .remove-btn {
-    padding: 8px 12px;
-    font-size: 14px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.add-product-form-container .ingredients-field .add-btn {
-    background-color: #ffd9d9;
-    color: #000;
-}
-
-.add-product-form-container .ingredients-field .add-btn:hover {
-    background-color: #ffb3b3;
-}
-
-.add-product-form-container .ingredients-field .remove-btn {
-    background-color: #ffb3b3;
-    color: #fff;
-}
-
-.add-product-form-container .ingredients-field .remove-btn:hover {
-    background-color: #ff8080;
-}
 
 /* Submit Button */
 .add-product-form-container .submit-btn {
@@ -149,6 +102,62 @@ body {
 
 .add-product-form-container .submit-btn:hover {
     background: #ff6666;
+}
+
+/* ปุ่มราคา */
+.price-btn {
+    flex: 1;
+    color: #5d5d5d;
+    background-color: #ffdede;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.price-btn:hover {
+    background-color: #ffcccc;
+    border-color: #ff6666;
+}
+
+.price-btn.selected {
+    background-color: #ff6666; /* สีแดงสำหรับสถานะที่เลือก */
+    color: white;
+    /* border-color: #e65555; */
+}
+
+/* Form Row */
+.form-row {
+    display: flex;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+}
+
+.form-row .input-field {
+    flex: 1; /* ให้ช่อง input ขยายตัวตามพื้นที่ */
+}
+
+.ingredients-field {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
+}
+
+.ingredients-btn {
+    background: #ff8080;
+    color: #fff;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; /* ระยะห่างระหว่าง input */
+    gap: 20px; /* ระยะห่างระหว่าง input */
+    margin-bottom: 20px; /* เว้นช่องว่างระหว่าง row */
 }
 
 /* Responsive Design */
